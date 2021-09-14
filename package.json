@@ -1,0 +1,35 @@
+{
+  "name": "nro2nsp",
+  "version": "1.0.0",
+  "description": "NSP builder for redirecting NRO files",
+  "main": "main.js",
+  "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.1",
+    "bootstrap-icons": "^1.5.0",
+    "electron-dl": "^3.2.1",
+    "electron-settings": "^4.0.2",
+    "jquery": "^3.6.0",
+    "resize-img": "^2.0.0"
+  },
+  "devDependencies": {
+    "electron": "^13.1.2",
+    "electron-builder": "^22.11.7"
+  },
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder --win=portable"
+
+  },
+  "build": {
+    "productName": "nro2nsp",
+    "appId": "com.nro2nsp",
+    "extraFiles": [
+      "resources/"
+    ]
+  },
+  "author": "plas",
+  "license": "ISC"
+}
