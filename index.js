@@ -44,23 +44,19 @@ function toggleType() {
 $('#generateNRO').submit(function (event) {
 	event.preventDefault();
 
-	try {
 		let options = {
 			keysLocation: document.getElementById('inputKeys').value,
 			titleName: document.getElementById('inputTitleName').value,
 			titlePublisher: document.getElementById('inputAuthor').value,
 			titleID: document.getElementById('inputTitleID').value,
-			nroLocation: document.getElementById('inputNROLocation').value + document.getElementById('inputNROName').value,
+			nroLocation: document.getElementById('inputNROName').value + document.getElementById('inputNROName').value,
 			coreLocation: document.getElementById('inputCoreLocation').value,
 			romLocation: document.getElementById('inputRomLocation').value,
 			saveLocation: document.getElementById('inputSaveLocation').value,
 			isRetroarch: isRetroarch
 		}
 		ipcRenderer.send('createNSP', options);
-	} catch (reason) {
-		ipcRenderer.send('informationDialog', `An error occurred while trying to create the NSP.\r\n\r\nReason: ${reason}`); // error
-		return false;
-	}
+
 });
 
 
